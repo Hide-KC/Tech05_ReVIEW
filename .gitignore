@@ -1,0 +1,7 @@
+﻿node_modules
+Gemfile.lock
+*.pdf
+*.epub
+*.psd
+
+articles/*.html
