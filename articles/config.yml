@@ -17,13 +17,13 @@ review_version: 2.0
 # inherit: ["A.yml", "B.yml"]
 
 # ブック名(ファイル名になるもの。ASCII範囲の文字を使用)
-bookname: TwitterApplicationOnKotlin
+bookname: ReVIEWOnWindows
 # 記述言語。省略した場合はja
 language: ja
 
 # 書名
 # 読みを入れる例 booktitle: {name: "Re:VIEW EPUBサンプル", file-as: "リビューイーパブサンプル"}
-booktitle: {name: "Twitter Application on Kotlin", file-as: "ツイッターアプリケーションオンコトリン"}
+booktitle: {name: "Windowsで技術書執筆環境を整えた本", file-as: "ウィンドウズデギジュツショシッピツカンキョウヲトトノエタホン"}
 
 # 著者名。「, 」で区切って複数指定できる
 # 読みを入れる例 aut: [{name: "青木峰郎", file-as: "アオキミネロウ"}, {name: "武藤健志", file-as: "ムトウケンシ"}, {name: "高橋征義", file-as: "タカハシマサヨシ"}, {name: "角征典", file-as: "カドマサノリ"}]
@@ -61,7 +61,7 @@ edt: ["KC"]
 # a-pbl, pbl: 出版社（発行所）
 pbl: ["くり返す日常"]
 # a-prt, prt: 印刷所
-prt: ["（有）ねこのしっぽ"]
+prt: ["セブンイレブン なんとか支店コピー機"]
 # prt: TechBooster
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者
@@ -76,7 +76,7 @@ date: 2018-10-8
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [["2018-10-8 技術書典5版 v1.0.0"]]
+history: [["2018-10-8 技術書典5版 preview"]]
 # 権利表記(配列で複数指定可)
 # rights: (C) 2016 Re:VIEW Developers
 rights: (C) 2018 KC
@@ -92,7 +92,7 @@ rights: (C) 2018 KC
 debug: null
 
 # 固有IDに使用するドメイン。省略した場合は時刻に基づくランダムUUIDが入る
-urnid: urn:uid:https://github.com/Hide-KC/gijutusyoten_05
+urnid: urn:uid:https://github.com/Hide-KC/Tech05_ReVIEW
 #
 # ISBN。省略した場合はurnidが入る
 # isbn: null

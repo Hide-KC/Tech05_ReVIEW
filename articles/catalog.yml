@@ -2,11 +2,8 @@ PREDEF:
   - preface.re
 
 CHAPS:
-  - preparation.re
-  - implements.re
-  - create_app.re
-  - create_color_picker.re
+  - how_to_build.re
 
 POSTDEF:
   - afterword.re
-  - contributors.re
+  - contributor.re
