@@ -5,3 +5,4 @@ Gemfile.lock
 *.psd
 
 articles/*.html
+表紙/

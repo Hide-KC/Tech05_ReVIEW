@@ -6,7 +6,7 @@
 
 # この設定ファイルでサポートするRe:VIEWのバージョン番号。
 # major versionが違うときにはエラーを出す。
-review_version: 2.0
+review_version: 2.5
 
 # ほかの設定ファイルの継承を指定できる。同じパラメータに異なる値がある場合は、
 # 呼び出し元の値が優先される。
@@ -23,7 +23,7 @@ language: ja
 
 # 書名
 # 読みを入れる例 booktitle: {name: "Re:VIEW EPUBサンプル", file-as: "リビューイーパブサンプル"}
-booktitle: {name: "Windowsで技術書執筆環境を整えた本", file-as: "ウィンドウズデギジュツショシッピツカンキョウヲトトノエタホン"}
+booktitle: {name: "今日から始める！Re:VIEW執筆環境構築", file-as: "キョウカラハジメルレビューシッピツカンキョウコウチク"}
 
 # 著者名。「, 」で区切って複数指定できる
 # 読みを入れる例 aut: [{name: "青木峰郎", file-as: "アオキミネロウ"}, {name: "武藤健志", file-as: "ムトウケンシ"}, {name: "高橋征義", file-as: "タカハシマサヨシ"}, {name: "角征典", file-as: "カドマサノリ"}]
@@ -61,7 +61,7 @@ edt: ["KC"]
 # a-pbl, pbl: 出版社（発行所）
 pbl: ["くり返す日常"]
 # a-prt, prt: 印刷所
-prt: ["セブンイレブン なんとか支店コピー機"]
+prt: ["セブンイレブン マルチコピー機"]
 # prt: TechBooster
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者
@@ -135,7 +135,7 @@ toc: true
 # mytoc: true
 
 # 表紙にするHTMLファイル。ファイル名を指定すると表紙として入る
-cover: _cover.html
+cover: cover.html
 #
 # 表紙に配置し、書籍の影絵にも利用する画像ファイル。省略した場合はnull (画像を使わない)。画像ディレクトリ内に置いてもディレクトリ名は不要(例: cover.jpg)
 # coverimage: cover.png
@@ -299,7 +299,7 @@ texdocumentclass: ["jsbook", "b5j,twoside,openany,uplatex"]
 # dvicommand: "dvipdfmx"
 #
 # LaTeX用のdvi変換コマンドのオプションを指定する
-dvioptions: "-f msmingoth.map -d 5"
+dvioptions: "-f yu-win10.map -d 5"
 
 # 以下のパラメータを有効にするときには、
 # pdfmaker:

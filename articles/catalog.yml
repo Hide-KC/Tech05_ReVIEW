@@ -3,7 +3,8 @@ PREDEF:
 
 CHAPS:
   - how_to_build.re
+  - tips.re
 
 POSTDEF:
   - afterword.re
-  - contributor.re
+  # - contributor.re

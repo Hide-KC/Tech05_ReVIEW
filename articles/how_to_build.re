@@ -1,6 +1,6 @@
-= Re:VIEW環境を構築するぞ！
-執筆環境の構築手順です。
-第１章とかついていますが、本章しかないのであしからずなのです。
+={how_to_build} Re:VIEW環境を構築するぞ！
+執筆環境を構築します。
+最初に必要なソフトをダウンロードしておき、順にインストールしていきます。
 
 == 準備
 次のモノを準備します。
@@ -19,7 +19,7 @@
 seqsplitはダウンロードしてもらえれば分かると思いますが、seqsplit.styがそのまま入っているわけではありません。
 .insから.styを生成しますが、生成にLaTeXが必要なのでひとまず脇に置いておきましょう。
 
-== 構築開始
+== 環境構築
 === Rubyのインストール
 Re:VIEWリポジトリのdoc/quickstart.ja.mdを見ると、次のように記載されています。
 
@@ -31,15 +31,15 @@ Ruby gemあるいはGitのいずれかを使ってダウンロード・展開し
 
 ということで、Rubyをインストールします。
 
-ダウンロードしたRubyInstallerをポチポチ押していって、
+ダウンロードしたRubyInstallerを実行し、OKをポチポチ押していって、
 黒い画面が出てきたら1,2,3を順番にすべて実行していきます。
 
-//image[ruby_install][黒い画面になったら１～３を順番に実行]{
+//image[ruby_install][黒い画面になったら１～３を順番に実行][scale=0.6]{
 //}
 
 ネットからどんどこファイルをダウンロードするので気長に待ちます。
-インストールが終わったら、念のためちゃんと出来ているか確認します。
-コマンドプロンプトまたはPowerShellを起動して次のコマンドを打ちます。
+インストールが終わったら、念のためちゃんとできているか確認します。
+コマンドプロンプト（またはPowerShell）を起動して次のコマンドを打ちます。
 
 //cmd{
 $ ruby --version
@@ -55,27 +55,26 @@ TeX InstallerはHPを見ていただければ分かるように、
 基本的に「次へ」や「OK」を押していけば終わりますが、
 一点だけ注意が必要な部分のみ記載します（@<img>{download_server}）。
 
-//image[download_server][サーバを選択する]{
+//image[download_server][サーバを選択する][scale=0.6]{
 //}
 
 サーバの調子によってはダウンロードがうまくいかない場合があります。
 もしダウンロードできないようでしたら別のサーバを選択するか、
 時間を置いてやり直してみてください。
 
-そのあとは「次へ」または「OK」をポチっていきます@<fn>{kakure}。
-最後に次のように表示されれば成功です（@<img>{success_tex}）。
-
-//image[success_tex][TeXインストールの完了]{
-//}
-
-//footnote[kakure][途中、小さい画面が他の画面の後ろに隠れてしまうかもしれません。焦らず…。]
+そのあとは「次へ」または「OK」をポチっていきます。
+最後にインストール結果一覧が出てきますので、各ソフトウェアのインストールに成功していればOKです。
 
 === Git for Windowsのインストール
 VSCodeではバージョン管理にGit for Windowsを使用します。
-もしmsys2版Gitを使いたい場合（開発環境と競合する等）、msys2版Gitは
-「git rev-parse --show-toplevelを実行すると、/から始まるPOSIXシェル環境のパスを返します」@<fn>{msys2_git}
-ので回避策が必要になります。
-本書ではストレートにGit for Windowsを使用します。
+もしmsys2版Gitを同じ環境で使いたい場合（開発環境と競合する等）、msys2版Gitは……
+
+//quote{
+git rev-parse --show-toplevelを実行すると、/から始まるPOSIXシェル環境のパスを返します。
+//}
+
+POSIXシェル環境のパスを返されてもWindowsでは困ってしまうので、回避策が必要になります@<fn>{msys2_git}。
+msys2版Gitとの共存はなかなか骨なので、本書ではストレートにGit for Windowsを使用します。
 
 さてインストールについては、許諾事項の同意以外は同じくポチポチ
 次へを押していただければいいので、特に特記事項はありません。
@@ -101,7 +100,7 @@ Re:VIEWのディレクトリですが、筆者の環境では次のとおりに�
 何かと見ることも多いと思いますので覚えておきましょう。
 
 === VSCodeのインストール
-インストールウィザードに従ってポチポチインストールしましょう。
+インストールウィザードにしたがってポチポチインストールしましょう。
 PATHの追加はデフォルトでチェックが入っていると思いますが、
 そこだけ確認すれば大丈夫です。
 
@@ -123,20 +122,29 @@ TechBoosterさんの熱いご厚意により、技術書テンプレートのリ
  ** https://github.com/TechBooster/ReVIEW-Template
 
 感謝しながら自分のGitHubアカウントにフォークしてクローンしましょう。
-スタイルやレイアウトの詳細は「技術書をかこう！～はじめてのRe:VIEW～」（@<chap>{preface}参照）
+スタイルやレイアウトの詳細は、「技術書をかこう！～はじめてのRe:VIEW～」（@<chap>{preface}参照）
 およびリポジトリのドキュメントをご覧ください。
 
 === dvioptionsの修正
-Re:VIEW-TemplateはデフォルトでMacのヒラギノを使うようになっており、このままではPDFにコンパイルできませんので、
-articlesフォルダにあるconfig.ymlのdvioptionsを修正します（@<img>{modify_dvi}）。
+Re:VIEW-Templateはデフォルトでヒラギノフォントを使うようになっており、
+Windowsでは通常ヒラギノフォントは入っていないのでPDFにコンパイルできません。
+そこで、articlesフォルダにあるconfig.ymlのdvioptionsを修正します（@<list>{modify_dvi}）。
 
-//image[modify_dvi][config.ymlの修正]{
+//listnum[modify_dvi][config.ymlの修正]{
 # dvioptions: "-d 5"
 　↓
 dvioptions: "-f msmingoth.map -d 5"
+
+# 游明朝及び游ゴシックを埋め込みたい場合は次のとおり
+dvioptions: "-f yu-win10.map -d 5"
 //}
 
-これでPDF出力時にMS明朝、MSゴシックが埋め込まれます。
+Windows7で游明朝及び游ゴシックを使用する場合は、Microsoftが
+游書体を配布しているのでそちらをインストールの上指定してください@<fn>{yu-win10}。
+これでPDF出力時にMS明朝、MSゴシック、または游書体が埋め込まれます@<fn>{umekomi}。
+
+//footnote[yu-win10][Micosoftダウンロードセンター https://www.microsoft.com/ja-jp/download/details.aspx?id=49116]
+//footnote[umekomi][地味に本書は、Win7で書いて游書体を埋め込んでいます]
 
 === seqsplit.styの生成、配置
 最後に、seqsplit.styを導入します。
@@ -151,12 +159,12 @@ $ latex seqsplit.ins
 //}
 
 すると同じフォルダ内にseqsplit.styが出力されるので、
-これを次の場所に移動します。
+これをlatexフォルダに移動します。筆者の環境では次のところでした。
 
  * C:\w32tex\share\texmf-dist\tex\latex\seqsplit
 
-seqsplitフォルダは自身で作ってその中に移動してください。
-これでやっとPDFコンパイルができるようになりました。
+seqsplitフォルダは自身で作成して、その中に移動してください。
+これでやっとPDFコンパイルがとおるようになりました。
 
 === 動作確認
 確認のために、articlesフォルダに次のファイルを生成します@<fn>{preface}。
@@ -164,28 +172,26 @@ seqsplitフォルダは自身で作ってその中に移動してください。
  * preface.re
 
 preface.reについて、VSCodeにて次のとおり記述します。
-//listnum[test][各ファイルへの記載]{
+//listnum[test][preface.re]{
 = はじめに
 //}
 
 VSCodeでターミナルを開いて（メニューバーの表示→ターミナル または Ctrl+@）、次のコマンドを実行します。
 
 //cmd{
-$ cd articles
+$ cd articles ← config.ymlが置いてあるフォルダに移動
 $ review-pdfmaker config.yml
 //}
 
 しばらく待って「xxxx bytes written」と表示されたら成功です。
 articlesフォルダにPDFが出力されているので確認してみてください。
 
-なおpreface.reを作れば出力できるはずですが、もしかしたらエラー出ちゃうかもしれません。
-そしたらすみません、ググってみてください。
-
-//footnote[preface][なぜかReVIEW-Templateにはpreface.reだけ入ってない模様。]
+//footnote[preface][なぜかReVIEW-Templateにはpreface.reだけ入ってない模様]
 
 == まとめ
 超突貫で執筆環境の構築とPDFコンパイルまで終わらせました。
 TechBoosterさんのテンプレのおかげで、周辺環境を整えるのみで
 執筆環境が整ってしまいました。
+これで次回の技術書典では本が出せますね。
 
 それではよき執筆ライフを！
