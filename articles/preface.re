@@ -3,7 +3,7 @@
 
 本書は、筆者が技術書典５ではじめて技術書を執筆するにあたり、
 WindowsにRe:VIEW執筆環境を整えたときの手順やTipsをまとめた本です。
-実際に拙著「Twitter Application on Kotlin（技術書典５初頒布）」はこの環境で執筆し、
+実際に拙著「Twitter Application on Kotlin」（技術書典５初頒布）はこの環境で執筆し、
 （有）ねこのしっぽさんに一発入稿できました。
 
 == とにかくWindowsで執筆環境作る方法教えて！
