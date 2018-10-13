@@ -16,8 +16,8 @@
  * seqsplit.sty（スタイルファイル）
  ** https://www.biwako.shiga-u.ac.jp/sensei/kumazawa/tex/seqsplit.html
  
-seqsplitはダウンロードしてもらえれば分かると思いますが、seqsplit.styがそのまま入っているわけではありません。
-.insから.styを生成しますが、生成にLaTeXが必要なのでひとまず脇に置いておきましょう。
+seqsplitは、ダウンロードしたzipファイルにseqsplit.styがそのまま入っているわけではありません。
+.insから.styを生成する必要がありますが、生成にLaTeXが必要なのでひとまず脇に置いておきましょう。
 
 == 環境構築
 === Rubyのインストール
@@ -50,8 +50,7 @@ ruby 2.4.4p296 (2018-03-28 revision 63013) [x64-mingw32]
 終わったら次にTeXのインストールです。
 
 === TeXのインストール
-TeX InstallerはHPを見ていただければ分かるように、
-本当に「誰にでもインストールできるTeX」です。
+TeX InstallerはHPに書いてあるように、本当に「誰にでもインストールできるTeX」です。
 基本的に「次へ」や「OK」を押していけば終わりますが、
 一点だけ注意が必要な部分のみ記載します（@<img>{download_server}）。
 
@@ -122,7 +121,7 @@ TechBoosterさんの熱いご厚意により、技術書テンプレートのリ
  ** https://github.com/TechBooster/ReVIEW-Template
 
 感謝しながら自分のGitHubアカウントにフォークしてクローンしましょう。
-スタイルやレイアウトの詳細は、「技術書をかこう！～はじめてのRe:VIEW～」（@<chap>{preface}参照）
+スタイルやレイアウトの詳細は、「技術書をかこう！～はじめてのRe:VIEW～」（はじめに参照）
 およびリポジトリのドキュメントをご覧ください。
 
 === dvioptionsの修正
